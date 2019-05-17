@@ -1,21 +1,16 @@
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.RenderingHints;
-import java.awt.Stroke;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import java.util.List; import java.util.Random; import javax.swing.JFrame; 
+import java.awt.BasicStroke; import java.awt.Color; import java.awt.Dimension; 
+import java.awt.Graphics; import java.awt.Graphics2D; import java.awt.FontMetrics;
+import java.awt.RenderingHints; import java.awt.Stroke; import java.util.ArrayList;
+import javax.swing.JPanel; import javax.swing.SwingUtilities; import java.awt.Point; 
 
-public class GraphPanel extends JPanel {
-
+public class GraphPanel extends JPanel{
+    
+    //Data Variables
+    private ArrayList<Double> y;
+    private static double[][] xy = Main.data; //Points to the Main (Data Array)
+    
+    //Graphing Variables
     private int width = 800;
     private int heigth = 400;
     private int padding = 25;
@@ -26,7 +21,15 @@ public class GraphPanel extends JPanel {
     private static final Stroke GRAPH_STROKE = new BasicStroke(2f);
     private int pointWidth = 4;
     private int numberYDivisions = 10;
-    private ArrayList<Double> y;
+    
+    public static void subroutine3() {
+      System.out.println(xy);
+      /*SwingUtilities.invokeLater(new Runnable() {
+         public void run() {
+            createAndShowGui();
+         }
+      });*/
+   }
 
     public GraphPanel(ArrayList<Double> y) {
         this.y = y;
@@ -163,11 +166,4 @@ public class GraphPanel extends JPanel {
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-      SwingUtilities.invokeLater(new Runnable() {
-         public void run() {
-            createAndShowGui();
-         }
-      });
-   }
 }

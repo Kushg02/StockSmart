@@ -11,7 +11,7 @@ public class GUI extends JFrame
     JButton analyze;
     String c1FileDir, c2FileDir, indexFileDir;
 
-    public static void main(String[] args) {
+    public static void subroutine2() {
         new GUI();
     }
 

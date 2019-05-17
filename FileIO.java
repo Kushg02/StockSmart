@@ -8,14 +8,13 @@
 import java.io.*;
 import java.util.*;
 
-public class FileIO
+public class FileIO extends Main
 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void subroutine1() throws FileNotFoundException {
         System.out.println("Enter the file directory: ");
         Scanner in = new Scanner(System.in);
         String file = in.next();
         Scanner input = new Scanner(new File(file));
-        double[][] data = new double[2][100];
         int index = 0; 
         while(input.hasNextLine()) {
             String line = input.nextLine();
