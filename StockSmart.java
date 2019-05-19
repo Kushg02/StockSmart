@@ -8,25 +8,23 @@
 import java.io.*;
 import java.util.*;
 
-public class Main
+public class StockSmart //Main Program
 {
-    public static double[][] data;
 
-    public Main()
+    public StockSmart()
     {
-        data = new double[2][100];
+
     }
 
     public static void main(String[] args) throws FileNotFoundException
     {
-        Main app = new Main(); //Creates Main App Object
-        app.data[0][0] = 4.20; 
+        StockSmart app = new StockSmart(); //Creates Main App Object
         
-        System.out.println(data.toString());
-        
+        FileIO amzn = new FileIO("dataTest1.txt");
+        amzn.getData();
         //FileIO.subroutine1();
         //GUI.subroutine2();
-        GraphPanel.subroutine3();
+        //GraphPanel.subroutine3();
         
     }
 }

@@ -8,20 +8,37 @@
 import java.io.*;
 import java.util.*;
 
-public class FileIO extends Main
+public class FileIO
 {
-    public static void subroutine1() throws FileNotFoundException {
+    private String fileName;
+    private String[] dates;
+    private double[] data;
+    
+    public FileIO(String file) throws FileNotFoundException {
+        fileName = file;
+        
         System.out.println("Enter the file directory: ");
         Scanner in = new Scanner(System.in);
-        String file = in.next();
         Scanner input = new Scanner(new File(file));
         int index = 0; 
         while(input.hasNextLine()) {
             String line = input.nextLine();
             String[] words = line.split(", ");
-            data[0][index] = Double.parseDouble(words[0]);
-            data[1][index] = Double.parseDouble(words[1]);
+            dates[index] = words[0];
+            data[index] = Double.parseDouble(words[1]);
             index++;
         }
+    }
+    
+    public String[] getDates(){
+        return dates;
+    }
+    
+    public double[] getData(){
+        return data;
+    }
+    
+    public String getFileName(){
+        return fileName;
     }
 }
