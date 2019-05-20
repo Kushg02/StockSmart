@@ -22,9 +22,10 @@ public class StockSmart //Main Program
         
         FileIO amzn = new FileIO("dataTest1.txt");
         amzn.getData();
+        
         //FileIO.subroutine1();
         //GUI.subroutine2();
-        //GraphPanel.subroutine3();
+        GraphPanel.graphStock(amzn);
         
     }
 }

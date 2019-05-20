@@ -22,15 +22,15 @@ public class GraphPanel extends JPanel{
     private int pointWidth = 4;
     private int numberYDivisions = 10;
     
-    public static void graphStock(FileIO obj) { 
+   public static void graphStock(FileIO obj) { 
       xAxis = obj.getDates();
       yAxis = obj.getData();
       
-      /*SwingUtilities.invokeLater(new Runnable() {
+      SwingUtilities.invokeLater(new Runnable() {
          public void run() {
             createAndShowGui();
          }
-      });*/
+      });
    }
 
     public GraphPanel(double[] y) {

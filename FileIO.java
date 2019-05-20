@@ -7,7 +7,6 @@
  */
 import java.io.*;
 import java.util.*;
-
 public class FileIO
 {
     private String fileName;
@@ -16,14 +15,17 @@ public class FileIO
     
     public FileIO(String file) throws FileNotFoundException {
         fileName = file;
-        
-        System.out.println("Enter the file directory: ");
-        Scanner in = new Scanner(System.in);
+        System.out.println("Scanning file" + fileName);
         Scanner input = new Scanner(new File(file));
         int index = 0; 
+        
+        dates = new String[100];
+        data = new double[100];
+        
         while(input.hasNextLine()) {
             String line = input.nextLine();
             String[] words = line.split(", ");
+            System.out.println(Arrays.toString(words));
             dates[index] = words[0];
             data[index] = Double.parseDouble(words[1]);
             index++;
