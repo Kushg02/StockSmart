@@ -4,6 +4,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.text.NumberFormat;
 import java.text.DecimalFormat;
+import java.awt.*;
 public class GUI extends JFrame
 {
     JLabel company1,company2,index,beta1,beta2,betaIndex,suggestion,suggestComL,detail,riskL,ROIL,scoreL;
@@ -11,29 +12,39 @@ public class GUI extends JFrame
     JButton analyze;
     String c1FileDir, c2FileDir, indexFileDir;
 
-    public static void subroutine2() {
+    public static void guiMain() {
         new GUI();
     }
 
     public GUI() {
-        this.setSize(600, 650);
+        this.setSize(250, 375);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Statistical Risk Assessment of Securities");
+        this.setUndecorated(true);
+        this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+       
         
         JPanel thePanel = new JPanel();
+        //setLayout(new GridLayout(5, 5, 5, 0));
+        
+        /////Company CSVs
         company1 = new JLabel("Stock File For Company 1");
         thePanel.add(company1);
         company1File = new JTextField("",15);
         thePanel.add(company1File);
+        
         company2 = new JLabel("Stock File For Company 2");
         thePanel.add(company2);
         company2File = new JTextField("",20);
         thePanel.add(company2File);
+        
         index = new JLabel("Stock File For Index");
         thePanel.add(index);
         indexFile = new JTextField("",20);
         thePanel.add(indexFile);
+        
+        /////Betas
         beta1 = new JLabel("Beta of Company 1");
         thePanel.add(beta1);
         b1 = new JTextField("",5);
@@ -46,12 +57,16 @@ public class GUI extends JFrame
         thePanel.add(betaIndex);
         bIndex = new JTextField("",5);
         thePanel.add(bIndex);
+        
+        /////Output1
         suggestion = new JLabel("Suggestion");
         thePanel.add(suggestion);
         suggestComL = new JLabel("Company");
         thePanel.add(suggestComL);
         suggestComT = new JTextField("",10);
         thePanel.add(suggestComT);
+        
+        /////Output2
         detail = new JLabel("Details: Risks vs Rewards");
         thePanel.add(detail);
         riskL = new JLabel("Risk");
@@ -74,7 +89,22 @@ public class GUI extends JFrame
         this.add(thePanel);
         this.setVisible(true);
     }
-        private class ListenForButton implements ActionListener{
+    
+    public String getFile1(){
+        return company1File.getText();
+    }
+    
+    public String getFile2(){
+        return company2File.getText();
+    }
+    
+    public String getFile3(){
+        return indexFile.getText();
+    }
+    
+
+    
+    private class ListenForButton implements ActionListener{
         
         // This method is called when an event occurs
         
