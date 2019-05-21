@@ -15,7 +15,8 @@ public class TimeSeries_AWT extends ApplicationFrame {
    public TimeSeries_AWT( final String title ) {
       super( title );         
       String[] x = {"1/3/2002","1/4/2002"};
-      final XYDataset dataset = createDataset(x);         
+      double[] y = {1313.13, 1232.24};
+      final XYDataset dataset = createDataset(x, y);         
       final JFreeChart chart = createChart( dataset );         
       final ChartPanel chartPanel = new ChartPanel( chart );         
       chartPanel.setPreferredSize( new java.awt.Dimension( 560 , 370 ) );         
@@ -23,25 +24,25 @@ public class TimeSeries_AWT extends ApplicationFrame {
       setContentPane( chartPanel );
    }
 
-   private XYDataset createDataset(String[] x) {
-      final TimeSeries series = new TimeSeries( "Data" );         
-      for(String ind : x) 
+   private XYDataset createDataset(String[] x, double[] y) {
+      final TimePeriodValues series = new TimePeriodValues( "Data" );         
+      for(int i = 0; i < x.length; i++) 
       {
-          String[] parts = ind.split("/");
+          String[] parts = x[i].split("/");
           int day = Integer.parseInt(parts[1]);
           int month = Integer.parseInt(parts[0]);
           int year = Integer.parseInt(parts[2]);
           Day date = new Day(day, month, year); //integer
-          series.add(date,12.0);
+          series.add(date, y[i]);
       }
-      return new TimeSeriesCollection(series);
+      return TimePeriodValuesCollection(series);
    }     
 
    private JFreeChart createChart( final XYDataset dataset ) {
       return ChartFactory.createTimeSeriesChart(             
-         "Computing Test", 
-         "Seconds",              
-         "Value",              
+         "Stock Market Analysis", 
+         "Date",              
+         "Prices",              
          dataset,             
          false,              
          false,              
@@ -49,7 +50,7 @@ public class TimeSeries_AWT extends ApplicationFrame {
    }
 
    public static void main( final String[ ] args ) {
-      final String title = "Time Series Management";         
+      final String title = "Stock Market Analysis";         
       final TimeSeries_AWT demo = new TimeSeries_AWT( title );         
       demo.pack( );         
       RefineryUtilities.positionFrameRandomly( demo );         
