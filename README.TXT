@@ -5,10 +5,10 @@ all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE: StockSmart
-PURPOSE OF PROJECT: To Predict the Better Stock
-VERSION or DATE: 1.3
-HOW TO START THIS PROJECT:
-AUTHORS:
+PURPOSE OF PROJECT: Stock Analysis
+VERSION or DATE: 1.5v
+HOW TO START THIS PROJECT: Run 'void main' in class StockSmart
+AUTHORS: Kush Garg & Lucy Lu
 USER INSTRUCTIONS:
 
 Files For Input:

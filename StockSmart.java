@@ -25,7 +25,7 @@ public class StockSmart //Main Program
         
         //FileIO.subroutine1();
         //GUI.subroutine2();
-        GraphPanel.graphStock(amzn);
+        
         
     }
 }
