@@ -3,11 +3,10 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart; 
 import org.jfree.data.general.SeriesException; 
 import org.jfree.data.time.*; 
-import org.jfree.data.time.TimePeriodValuesCollection;
 import org.jfree.data.xy.XYDataset; 
 import org.jfree.ui.ApplicationFrame; 
 import org.jfree.ui.RefineryUtilities;
-import org.jfree.data.time.Day;
+import org.jfree.chart.title.LegendTitle;
 
 public class TimeSeries_AWT extends ApplicationFrame {
 
@@ -30,7 +29,7 @@ public class TimeSeries_AWT extends ApplicationFrame {
    }
 
    private XYDataset createDataset(String[] x, double[] y, double[] z, double[] w) {
-      final TimePeriodValues s1 = new TimePeriodValues("Data1");         
+      final TimePeriodValues s1 = new TimePeriodValues("Company 1");         
       for(int i = 0; i < x.length; i++) 
       {
           String[] parts = x[i].split("/");
@@ -41,7 +40,7 @@ public class TimeSeries_AWT extends ApplicationFrame {
           s1.add(new SimpleTimePeriod(date.getStart(), date.getEnd()), y[i]);
       }
       
-      final TimePeriodValues s2 = new TimePeriodValues("Data2");         
+      final TimePeriodValues s2 = new TimePeriodValues("Company 2");         
       for(int i = 0; i < x.length; i++) 
       {
           String[] parts = x[i].split("/");
@@ -52,7 +51,7 @@ public class TimeSeries_AWT extends ApplicationFrame {
           s2.add(new SimpleTimePeriod(date.getStart(), date.getEnd()), z[i]);
       }
       
-      final TimePeriodValues s3 = new TimePeriodValues("Data3");         
+      final TimePeriodValues s3 = new TimePeriodValues("Index");         
       for(int i = 0; i < x.length; i++) 
       {
           String[] parts = x[i].split("/");
@@ -78,7 +77,7 @@ public class TimeSeries_AWT extends ApplicationFrame {
          "Date",              
          "Prices",              
          dataset,             
-         false,              
+         true,              
          false,              
          false);
    }
