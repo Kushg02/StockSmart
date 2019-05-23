@@ -7,9 +7,9 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.ui.ApplicationFrame; 
 import org.jfree.ui.RefineryUtilities;
 
-public class TimeSeries_AWT extends ApplicationFrame {
+public class Graph extends ApplicationFrame {
 
-   public TimeSeries_AWT (final String title) {
+   public Graph (final String title) {
       super(title);         
       
       String[] x = {"1/3/2002","1/4/2002", "1/5/2002", "1/6/2002", "1/7/2002"};
@@ -83,7 +83,7 @@ public class TimeSeries_AWT extends ApplicationFrame {
 
    public static void main(final String[ ] args) {
       final String title = "Stock Market Analysis";         
-      final TimeSeries_AWT demo = new TimeSeries_AWT(title);         
+      final Graph demo = new Graph(title);         
       demo.pack();         
       RefineryUtilities.positionFrameRandomly(demo);         
       demo.setVisible(true);

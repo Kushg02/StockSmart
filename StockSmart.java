@@ -16,7 +16,7 @@ public class StockSmart //Main Program
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException
+    public static void main(String[] args) throws FileNotFoundException //DISCLAIMER: Used in conjunction with reasearch, not an independent analyzer
     {
         StockSmart app = new StockSmart(); //Creates Main App Object
         
