@@ -6,7 +6,7 @@ import javax.swing.event.ChangeListener;
 public class trial extends javax.swing.JFrame{
     private javax.swing.JLabel a;
     private JTextField company1, company2, index, beta1, beta2, betaInd;
-    private JButton analyze;
+    private javax.swing.JButton analyze;
     private String c1FileDir, c2FileDir, indexFileDir;
     public trial() {
         //adds the picture
@@ -24,12 +24,12 @@ public class trial extends javax.swing.JFrame{
          
         company2 = new JTextField(20);
         company2.setSize( company2.getPreferredSize() );
-        company2.setLocation(260, 300);
+        company2.setLocation(260, 295);
         a.add(company2);
          
         index = new JTextField(20);
         index.setSize( index.getPreferredSize() );
-        index.setLocation(260, 360);
+        index.setLocation(260, 350);
         a.add(index);
          
         beta1 = new JTextField(5);
@@ -39,17 +39,17 @@ public class trial extends javax.swing.JFrame{
          
         beta2 = new JTextField(5);
         beta2.setSize( beta2.getPreferredSize() );
-        beta2.setLocation(650, 300);
+        beta2.setLocation(650, 295);
         a.add(beta2);
          
         betaInd = new JTextField(5);
         betaInd.setSize( betaInd.getPreferredSize() );
-        betaInd.setLocation(650, 360);
+        betaInd.setLocation(650, 350);
         a.add(betaInd);
         
         analyze = new JButton("Analyze");
         analyze.setSize( analyze.getPreferredSize() );
-        analyze.setLocation(700,350);
+        analyze.setLocation(750,295);
         ListenForButton lForButton = new ListenForButton();
         analyze.addActionListener(lForButton);
         a.add(analyze);
