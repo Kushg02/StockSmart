@@ -2,10 +2,11 @@ import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.Dimension;
  
 public class trial extends javax.swing.JFrame{
     private javax.swing.JLabel a;
-    private JTextField company1, company2, index, beta1, beta2, betaInd;
+    private JTextField company1, company2, index, beta1, beta2, betaInd, result;
     private javax.swing.JButton analyze;
     private String c1FileDir, c2FileDir, indexFileDir;
     public trial() {
@@ -54,6 +55,10 @@ public class trial extends javax.swing.JFrame{
         analyze.addActionListener(lForButton);
         a.add(analyze);
  
+        result = new JTextField();
+        result.setSize(new Dimension(701,259));
+        result.setLocation(148, 411);
+        a.add(result);
     }
       
     public static void main(String args[]){
