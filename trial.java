@@ -48,6 +48,7 @@ public class trial extends javax.swing.JFrame{
         a.add(betaInd);
         
         analyze = new JButton("Analyze");
+        analyze.setSize( analyze.getPreferredSize() );
         analyze.setLocation(700,350);
         ListenForButton lForButton = new ListenForButton();
         analyze.addActionListener(lForButton);
