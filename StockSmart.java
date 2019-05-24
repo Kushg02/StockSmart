@@ -25,16 +25,29 @@ public class StockSmart //Main Program
     }
     
     
-    
     public static void main(String[] args) throws FileNotFoundException //DISCLAIMER: Used in conjunction with reasearch, not an independent analyzer
     {
         StockSmart app = new StockSmart(); //Creates Main App Object
         
-        FileIO amzn = new FileIO("dataTest1.txt");
+        //Stock1
+        FileIO amzn = new FileIO(GUI.c1FileDir);
         amzn.getData();
         Calculation.Calc1(beta, amzn.getCurr(), principalInvestment, amzn.getLow(), amzn.getHigh(), predictedHigh, predictedLow);
         app.StockSmartScore1 = Calculation.getScore1();
         
+        //Stock2
+        FileIO nvda = new FileIO(GUI.c2FileDir);
+        nvda.getData();
+        Calculation.Calc1(beta, nvda.getCurr(), principalInvestment, nvda.getLow(), nvda.getHigh(), predictedHigh, predictedLow);
+        app.StockSmartScore2 = Calculation.getScore1();
+        
+        System.out.println("Stock 1 has a score of" + app.StockSmartScore1);
+        System.out.println("Stock 2 has a score of" + app.StockSmartScore2);
+        
+        if(app.StockSmartScore1 > app.StockSmartScore2)
+            System.out.println("Therefore Stock 1 is the better stock");
+        else if(app.StockSmartScore1 < app.StockSmartScore2)
+            System.out.println("Therefore ");    
         //FileIO.subroutine1();
         //GUI.subroutine2();
         
