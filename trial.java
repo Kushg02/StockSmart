@@ -6,10 +6,13 @@ import java.awt.Dimension;
  
 public class trial extends javax.swing.JFrame{
     private javax.swing.JLabel a;
-    private JTextField company1, company2, index, beta1, beta2, betaInd, result;
+    private JTextField company1, company2, index, beta1, beta2, invest, high1, 
+    low1, high2, low2, result;
     private javax.swing.JButton analyze;
     private String c1FileDir, c2FileDir, indexFileDir;
     public trial() {
+        
+        this.setResizable(false);
         //adds the picture
         a = new javax.swing.JLabel();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -18,46 +21,67 @@ public class trial extends javax.swing.JFrame{
         pack();
         //
         //adds the text fields to type in
-        company1 = new JTextField(20);
-        company1.setSize( company1.getPreferredSize() );
-        company1.setLocation(260, 240);
-        a.add(company1);
-         
-        company2 = new JTextField(20);
-        company2.setSize( company2.getPreferredSize() );
-        company2.setLocation(260, 295);
-        a.add(company2);
-         
+        
         index = new JTextField(20);
         index.setSize( index.getPreferredSize() );
-        index.setLocation(260, 350);
+        index.setLocation(350, 235);
         a.add(index);
+        
+        company1 = new JTextField(20);
+        company1.setSize( company1.getPreferredSize() );
+        company1.setLocation(350, 315);
+        a.add(company1);
          
         beta1 = new JTextField(5);
         beta1.setSize( beta1.getPreferredSize() );
-        beta1.setLocation(650, 240);
+        beta1.setLocation(350, 368);
         a.add(beta1);
-         
+        
+        company2 = new JTextField(20);
+        company2.setSize( company2.getPreferredSize() );
+        company2.setLocation(350, 443);
+        a.add(company2);
+        
         beta2 = new JTextField(5);
         beta2.setSize( beta2.getPreferredSize() );
-        beta2.setLocation(650, 295);
+        beta2.setLocation(350, 497);
         a.add(beta2);
          
-        betaInd = new JTextField(5);
-        betaInd.setSize( betaInd.getPreferredSize() );
-        betaInd.setLocation(650, 350);
-        a.add(betaInd);
+        invest = new JTextField(5);
+        invest.setSize( invest.getPreferredSize() );
+        invest.setLocation(693, 235);
+        a.add(invest);
+        
+        high1 = new JTextField(5);
+        high1.setSize( high1.getPreferredSize() );
+        high1.setLocation(693, 315);
+        a.add(high1);
+        
+        low1 = new JTextField(5);
+        low1.setSize( low1.getPreferredSize() );
+        low1.setLocation(693, 368);
+        a.add(low1);
+        
+        high2 = new JTextField(5);
+        high2.setSize( high2.getPreferredSize() );
+        high2.setLocation(693, 443);
+        a.add(high2);
+        
+        low2 = new JTextField(5);
+        low2.setSize( low2.getPreferredSize() );
+        low2.setLocation(693, 497);
+        a.add(low2);
         
         analyze = new JButton("Analyze");
-        analyze.setSize( analyze.getPreferredSize() );
-        analyze.setLocation(750,295);
+        analyze.setSize(new Dimension(100, 30));
+        analyze.setLocation(437,565);
         ListenForButton lForButton = new ListenForButton();
         analyze.addActionListener(lForButton);
         a.add(analyze);
  
         result = new JTextField();
-        result.setSize(new Dimension(701,259));
-        result.setLocation(148, 411);
+        result.setSize(new Dimension(705,105));
+        result.setLocation(150, 655);
         a.add(result);
     }
       
