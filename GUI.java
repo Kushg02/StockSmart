@@ -4,11 +4,11 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.Dimension;
  
-public class GUI extends javax.swing.JFrame{
-    private javax.swing.JLabel a;
+public class GUI extends JFrame{
+    private JLabel a;
     private JTextField company1, company2, index, beta1, beta2, invest, high1, 
     low1, high2, low2, result;
-    private javax.swing.JButton analyze;
+    private JButton analyze;
     private static String c1FileDir, c2FileDir, indexFileDir;
     private static double c1beta, c2beta, principal, c1high, c1low, c2high, c2low;
     
@@ -16,9 +16,9 @@ public class GUI extends javax.swing.JFrame{
         
         this.setResizable(false);
         //adds the picture
-        a = new javax.swing.JLabel();
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        a.setIcon(new javax.swing.ImageIcon("StockSmart GUI.png"));
+        a = new JLabel();
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        a.setIcon(new ImageIcon("StockSmart GUI.png"));
         add(a);
         pack();
         //
@@ -82,7 +82,7 @@ public class GUI extends javax.swing.JFrame{
         a.add(analyze);
  
         result = new JTextField();
-        result.setSize(new Dimension(705,105));
+        result.setSize(new Dimension(705,100));
         result.setLocation(150, 655);
         a.add(result);
     }
