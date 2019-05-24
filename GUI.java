@@ -9,7 +9,9 @@ public class GUI extends javax.swing.JFrame{
     private JTextField company1, company2, index, beta1, beta2, invest, high1, 
     low1, high2, low2, result;
     private javax.swing.JButton analyze;
-    private String c1FileDir, c2FileDir, indexFileDir;
+    private static String c1FileDir, c2FileDir, indexFileDir;
+    private static double c1beta, c2beta, principal, c1high, c1low, c2high, c2low;
+    
     public GUI() {
         
         this.setResizable(false);
@@ -85,8 +87,17 @@ public class GUI extends javax.swing.JFrame{
         a.add(result);
     }
     
+    public static String getFile1(){
+        return c1FileDir;
+    }
     
+    public static String getFile2(){
+        return c2FileDir;
+    }
     
+    public static String getIndexFile(){
+        return indexFileDir;
+    }
     
     public static void main(String args[]){
         java.awt.EventQueue.invokeLater(new Runnable() {
