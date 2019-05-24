@@ -123,13 +123,34 @@ public class GUI extends JFrame{
                 try{
                     int count = 0;
                     if (company1.getText().length() > 0) {
-                            c1FileDir = company1.getText();
+                        c1FileDir = company1.getText();
                     }
                     if (company2.getText().length() > 0) {
-                            c2FileDir = company2.getText();
+                        c2FileDir = company2.getText();
                     }
                     if (index.getText().length() > 0) {
-                            indexFileDir = index.getText();
+                        indexFileDir = index.getText();
+                    }
+                    if(beta1.getText().length() > 0) {
+                        c1beta = Double.parseDouble(beta1.getText());
+                    }
+                    if(beta2.getText().length() > 0) {
+                        c2beta = Double.parseDouble(beta2.getText());
+                    }
+                    if(invest.getText().length() > 0) {
+                        principal = Double.parseDouble(invest.getText());
+                    }
+                    if(high1.getText().length() > 0) {
+                        c1high = Double.parseDouble(high1.getText());
+                    }
+                    if(low1.getText().length() > 0) {
+                        c1low = Double.parseDouble(low1.getText());
+                    }
+                    if(high2.getText().length() > 0) {
+                        c2high = Double.parseDouble(high2.getText());
+                    }
+                    if(low2.getText().length() > 0) {
+                        c2low = Double.parseDouble(low2.getText());
                     }
                 }
                 
