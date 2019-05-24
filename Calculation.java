@@ -9,12 +9,13 @@ public class Calculation
 {
     // instance variables - replace the example below with your own
     
-    public static double stockSmartScore1 = 0.0; //corralates to the score calculated with the 1st calculation (Calc1)
+    private static double stockSmartScore1 = 0.0; //corralates to the score calculated with the 1st calculation (Calc1)
     
-    public static void Calc1(double beta, double currPrice, int numOfStock, double histLow, double histHigh, double estHigh, double stopLoss)
+    public static void Calc1(double beta, double currPrice, double principal, double histLow, double histHigh, double estHigh, double stopLoss)
     //histLow & histHigh must be the low & high before the current stock price
     // StopLoss is the price which trading stops, estHigh is the predicted future stock price
     {
+        int numOfStock = (int) (principal/currPrice);
         double returnRiskRatio = ((estHigh-currPrice))/((currPrice-stopLoss));
             double maxLoss = ((currPrice-stopLoss)*numOfStock);
             double minLoss = ((currPrice-stopLoss)*numOfStock);
@@ -37,7 +38,7 @@ public class Calculation
         stockSmartScore1 = (25*(voltatility*1)) + goodTimeToBuy + (12.5*returnRiskRatio);
     }
     
-    public double getScore1(){
+    public static double getScore1(){
         return stockSmartScore1;
     }
 }

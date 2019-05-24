@@ -12,6 +12,9 @@ public class FileIO
     private String fileName;
     private String[] dates;
     private double[] data;
+    private double currentPrice;
+    private double lowPrice;
+    private double highPrice;
     
     public FileIO(String file) throws FileNotFoundException {
         fileName = file;
@@ -30,6 +33,24 @@ public class FileIO
             data[index] = Double.parseDouble(words[1]);
             index++;
         }
+        
+        currentPrice = data[0];
+        
+	double max = data[1];
+	for(int i=2; i<data.length;i++){
+	    if(data[i]>max){
+	        max = data[i];
+	    }
+	}
+	highPrice = max;
+	
+	double min = data[1];
+	for(int i=2; i<data.length;i++){
+	    if(data[i]<min){
+	        min = data[i];
+	    }
+	}
+	lowPrice = min;
     }
     
     public String[] getDates(){
@@ -40,6 +61,18 @@ public class FileIO
         return data;
     }
     
+    public double getHigh(){
+        return highPrice;
+    }
+    
+    public double getLow(){
+        return lowPrice;
+    }
+    
+    public double getCurr(){
+        return currentPrice;
+    }
+        
     public String getFileName(){
         return fileName;
     }
