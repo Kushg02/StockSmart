@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Calculation
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ RiskCalculation\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=beta\ currPrice\ principal\ histLow\ histHigh\ estHigh\ stopLoss
+comment1.target=void\ Calc1(double,\ double,\ double,\ double,\ double,\ double,\ double)
+comment2.params=
+comment2.target=double\ getScore1()
+numComments=3

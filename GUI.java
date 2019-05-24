@@ -4,13 +4,13 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.Dimension;
  
-public class trial extends javax.swing.JFrame{
+public class GUI extends javax.swing.JFrame{
     private javax.swing.JLabel a;
     private JTextField company1, company2, index, beta1, beta2, invest, high1, 
     low1, high2, low2, result;
     private javax.swing.JButton analyze;
     private String c1FileDir, c2FileDir, indexFileDir;
-    public trial() {
+    public GUI() {
         
         this.setResizable(false);
         //adds the picture
@@ -84,11 +84,14 @@ public class trial extends javax.swing.JFrame{
         result.setLocation(150, 655);
         a.add(result);
     }
-      
+    
+    
+    
+    
     public static void main(String args[]){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new trial().setVisible(true);
+                new GUI().setVisible(true);
             }
         });
     }
