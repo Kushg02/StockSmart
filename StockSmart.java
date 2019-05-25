@@ -32,13 +32,13 @@ public class StockSmart //Main Program
         //Stock1
         FileIO amzn = new FileIO(GUI.c1FileDir);
         amzn.getData();
-        Calculation.Calc1(beta, amzn.getCurr(), principalInvestment, amzn.getLow(), amzn.getHigh(), predictedHigh, predictedLow);
+        Calculation.Calc1(GUI.beta1, amzn.getCurr(), GUI.principal, amzn.getLow(), amzn.getHigh(), GUI.c1High, GUI.c1Low);
         app.StockSmartScore1 = Calculation.getScore1();
         
         //Stock2
         FileIO nvda = new FileIO(GUI.c2FileDir);
         nvda.getData();
-        Calculation.Calc1(beta, nvda.getCurr(), principalInvestment, nvda.getLow(), nvda.getHigh(), predictedHigh, predictedLow);
+        Calculation.Calc1(GUI.beta2, nvda.getCurr(), GUI.principal, nvda.getLow(), nvda.getHigh(), GUI.c2High, GUI.c2Low);
         app.StockSmartScore2 = Calculation.getScore1();
         
         System.out.println("Stock 1 has a score of" + app.StockSmartScore1);
