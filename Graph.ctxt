@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Graph
+comment1.params=title\ ob1\ ob2\ ob3
+comment1.target=Graph(java.lang.String,\ FileIO,\ FileIO,\ FileIO)
+comment2.params=x\ y\ z\ w
+comment2.target=org.jfree.data.xy.XYDataset\ createDataset(java.lang.String[],\ double[],\ double[],\ double[])
+comment3.params=dataset
+comment3.target=org.jfree.chart.JFreeChart\ createChart(org.jfree.data.xy.XYDataset)
+comment4.params=ob1\ ob2\ ob3
+comment4.target=void\ graphStocks(FileIO,\ FileIO,\ FileIO)
+numComments=5
