@@ -3,12 +3,14 @@ import java.awt.event.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.Dimension;
- 
+import javax.swing.text.JTextComponent;
+import java.awt.Insets;
+
 public class GUI extends JFrame{
     private JLabel a;
     private JTextField company1, company2, index, beta1, beta2, invest, high1, 
     low1, high2, low2;
-    public static JTextField result;
+    public static JTextArea result;
     private JButton analyze;
     public static String c1FileDir, c2FileDir, indexFileDir;
     public static double c1beta, c2beta, principal, c1High, c1Low, c2High, c2Low;
@@ -25,52 +27,52 @@ public class GUI extends JFrame{
         //
         //adds the text fields to type in
         
-        index = new JTextField(20);
+        index = new JTextField("dataTest1.txt" , 15);
         index.setSize( index.getPreferredSize() );
         index.setLocation(350, 235);
         a.add(index);
         
-        company1 = new JTextField(20);
+        company1 = new JTextField("dataTest1.txt" , 15);
         company1.setSize( company1.getPreferredSize() );
         company1.setLocation(350, 315);
         a.add(company1);
          
-        beta1 = new JTextField(5);
+        beta1 = new JTextField("1" , 5);
         beta1.setSize( beta1.getPreferredSize() );
         beta1.setLocation(350, 368);
         a.add(beta1);
         
-        company2 = new JTextField(20);
+        company2 = new JTextField("dataTest1.txt" , 15);
         company2.setSize( company2.getPreferredSize() );
         company2.setLocation(350, 443);
         a.add(company2);
         
-        beta2 = new JTextField(5);
+        beta2 = new JTextField("1" , 5);
         beta2.setSize( beta2.getPreferredSize() );
         beta2.setLocation(350, 497);
         a.add(beta2);
          
-        invest = new JTextField(5);
+        invest = new JTextField("100000" , 5);
         invest.setSize( invest.getPreferredSize() );
         invest.setLocation(693, 235);
         a.add(invest);
         
-        high1 = new JTextField(5);
+        high1 = new JTextField("2000" , 5);
         high1.setSize( high1.getPreferredSize() );
         high1.setLocation(693, 315);
         a.add(high1);
         
-        low1 = new JTextField(5);
+        low1 = new JTextField("1000" , 5);
         low1.setSize( low1.getPreferredSize() );
         low1.setLocation(693, 368);
         a.add(low1);
         
-        high2 = new JTextField(5);
+        high2 = new JTextField("2000" , 5);
         high2.setSize( high2.getPreferredSize() );
         high2.setLocation(693, 443);
         a.add(high2);
         
-        low2 = new JTextField(5);
+        low2 = new JTextField("1000" , 5);
         low2.setSize( low2.getPreferredSize() );
         low2.setLocation(693, 497);
         a.add(low2);
@@ -82,7 +84,10 @@ public class GUI extends JFrame{
         analyze.addActionListener(lForButton);
         a.add(analyze);
  
-        result = new JTextField();
+        result = new JTextArea();
+        result.setMargin( new Insets(5,5,5,5) );
+        result.setLineWrap(true); 
+        result.setWrapStyleWord(true);
         result.setSize(new Dimension(705,100));
         result.setLocation(150, 655);
         a.add(result);

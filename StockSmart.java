@@ -10,6 +10,11 @@ import java.util.*;
 
 public class StockSmart //Main Program
 {
+    
+    //WARNING 1: Files must be in dd/mm/yy format and CSV sheets can only have 2 columns
+    //WARNING 2: Stock History Files must be the same in formatting/time period span
+    //DISCLAIMER: Used in conjunction with reasearch, not an independent analyzer
+    
     private double StockSmartScore1;
     private double StockSmartScore2;
     
@@ -27,7 +32,7 @@ public class StockSmart //Main Program
     }
     
     
-    public static void main(String[] args) throws FileNotFoundException //DISCLAIMER: Used in conjunction with reasearch, not an independent analyzer
+    public static void main(String[] args) throws FileNotFoundException 
     {
         StockSmart app = new StockSmart(); //Creates Main App Object
         GUI.gui();
@@ -61,14 +66,14 @@ public class StockSmart //Main Program
         app.StockSmartScore2 = Calculation.getScore1();
         
         
-        System.out.println("Stock 1 has a score of: " + app.StockSmartScore1);
-        System.out.println("Stock 2 has a score of: " + app.StockSmartScore2);
+        GUI.result.append("Stock 1 has a score of: " + app.StockSmartScore1 + " \n");
+        GUI.result.append("Stock 2 has a score of: " + app.StockSmartScore2 + " \n");
         
-        String analysis = "<html>";
+        String analysis = "\n";
         
         if(app.StockSmartScore1 > app.StockSmartScore2){
             analysis += amzn.getFileName() + " is the better stock to invest in, because its quanitfiable risk is outweighted by its return on investment";
-            analysis += "\n";
+            analysis += "\n     ";
         }
         else if(app.StockSmartScore1 < app.StockSmartScore2){
             analysis += nvda.getFileName()+" is the better stock to invest in, because its quanitfiable risk is outweighted by its return on investment";
@@ -78,8 +83,8 @@ public class StockSmart //Main Program
             analysis += "It appears both stocks yielded the same score, this is an extraordinary situation. Our Risk/ROI model determines that neither stock has a conclusive, quantifiable advantage over the other. Choose the stock which you feel more confident in, as neither stock appears to be a poor choice.";   
             analysis += "\n";
         }
-        analysis += "</html>";
-        GUI.result.setText(analysis);
+        
+        GUI.result.append(analysis);
         //FileIO.subroutine1();
         //GUI.subroutine2();
         Graph.graphStocks(amzn, nvda, index);

@@ -7,6 +7,8 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.ui.ApplicationFrame; 
 import org.jfree.ui.RefineryUtilities;
 
+import java.util.*;
+
 public class Graph extends ApplicationFrame {
 
    public Graph (final String title, FileIO ob1, FileIO ob2, FileIO ob3) {
@@ -28,10 +30,18 @@ public class Graph extends ApplicationFrame {
    }
 
    private XYDataset createDataset(String[] x, double[] y, double[] z, double[] w) {
-      final TimePeriodValues s1 = new TimePeriodValues("Company 1");         
-      for(int i = 0; i < x.length; i++) 
+      final TimePeriodValues s1 = new TimePeriodValues("Company 1");
+      int index = 0;
+      for (int i = 0; i < x.length; i++) {
+       if (x[i] == null) {
+           index = i;
+           break;}}
+      
+      
+      for(int i = 0; i < index; i++) 
       {
-          String[] parts = x[i].split("/");
+          String temp = x[i];
+          String[] parts = temp.split("/");
           int day = Integer.parseInt(parts[1]);
           int month = Integer.parseInt(parts[0]);
           int year = Integer.parseInt(parts[2]);
@@ -40,7 +50,7 @@ public class Graph extends ApplicationFrame {
       }
       
       final TimePeriodValues s2 = new TimePeriodValues("Company 2");         
-      for(int i = 0; i < x.length; i++) 
+      for(int i = 0; i < index; i++) 
       {
           String[] parts = x[i].split("/");
           int day = Integer.parseInt(parts[1]);
@@ -51,7 +61,7 @@ public class Graph extends ApplicationFrame {
       }
       
       final TimePeriodValues s3 = new TimePeriodValues("Index");         
-      for(int i = 0; i < x.length; i++) 
+      for(int i = 0; i < index; i++) 
       {
           String[] parts = x[i].split("/");
           int day = Integer.parseInt(parts[1]);
