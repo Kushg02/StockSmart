@@ -9,13 +9,13 @@ import org.jfree.ui.RefineryUtilities;
 
 public class Graph extends ApplicationFrame {
 
-   public Graph (final String title) {
+   public Graph (final String title, FileIO ob1, FileIO ob2, FileIO ob3) {
       super(title);         
       
-      String[] x = {"1/3/2002","1/4/2002", "1/5/2002", "1/6/2002", "1/7/2002"};
-      double[] y = {1313.13, 1232.24, 1313.13, 1353.13, 1213.13};
-      double[] z = {1132.32, 1242.43, 1253.53, 1353.32, 1125.14};
-      double[] w = {1511.54, 1534.53, 1564.35, 1645.34, 1542.24};
+      String[] x = ob1.getDates();
+      double[] y = ob1.getData();
+      double[] z = ob2.getData();
+      double[] w = ob3.getData();
       
       final XYDataset dataset = createDataset(x, y, z, w);         
       final JFreeChart chart = createChart(dataset);  
@@ -81,9 +81,9 @@ public class Graph extends ApplicationFrame {
          false);
    }
 
-   public static void main(final String[ ] args) {
+   public static void graphStocks(FileIO ob1, FileIO ob2, FileIO ob3) {
       final String title = "Stock Market Analysis";         
-      final Graph demo = new Graph(title);         
+      final Graph demo = new Graph(title, ob1, ob2, ob3);         
       demo.pack();         
       RefineryUtilities.positionFrameRandomly(demo);         
       demo.setVisible(true);

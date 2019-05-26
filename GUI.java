@@ -7,10 +7,11 @@ import java.awt.Dimension;
 public class GUI extends JFrame{
     private JLabel a;
     private JTextField company1, company2, index, beta1, beta2, invest, high1, 
-    low1, high2, low2, result;
+    low1, high2, low2;
+    public static JTextField result;
     private JButton analyze;
-    private static String c1FileDir, c2FileDir, indexFileDir;
-    private static double c1beta, c2beta, principal, c1high, c1low, c2high, c2low;
+    public static String c1FileDir, c2FileDir, indexFileDir;
+    public static double c1beta, c2beta, principal, c1High, c1Low, c2High, c2Low;
     
     public GUI() {
         
@@ -99,7 +100,7 @@ public class GUI extends JFrame{
         return indexFileDir;
     }
     
-    public static void main(String args[]){
+    public static void gui(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI().setVisible(true);
@@ -121,6 +122,7 @@ public class GUI extends JFrame{
                 // into a double in this situation
                 
                 try{
+                    StockSmart.ready = true;
                     int count = 0;
                     if (company1.getText().length() > 0) {
                         c1FileDir = company1.getText();
@@ -141,16 +143,16 @@ public class GUI extends JFrame{
                         principal = Double.parseDouble(invest.getText());
                     }
                     if(high1.getText().length() > 0) {
-                        c1high = Double.parseDouble(high1.getText());
+                        c1High = Double.parseDouble(high1.getText());
                     }
                     if(low1.getText().length() > 0) {
-                        c1low = Double.parseDouble(low1.getText());
+                        c1Low = Double.parseDouble(low1.getText());
                     }
                     if(high2.getText().length() > 0) {
-                        c2high = Double.parseDouble(high2.getText());
+                        c2High = Double.parseDouble(high2.getText());
                     }
                     if(low2.getText().length() > 0) {
-                        c2low = Double.parseDouble(low2.getText());
+                        c2Low = Double.parseDouble(low2.getText());
                     }
                 }
                 
