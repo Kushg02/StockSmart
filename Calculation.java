@@ -18,13 +18,13 @@ public class Calculation
         int numOfStock = (int) (principal/currPrice);
         double returnRiskRatio = ((estHigh-currPrice))/((currPrice-stopLoss));
             double maxLoss = ((currPrice-stopLoss)*numOfStock);
-            double minLoss = ((currPrice-stopLoss)*numOfStock);
+            double maxGain = ((estHigh-currPrice)*numOfStock);
         
         double voltatility = beta; //maybe add something else here
         
         double goodTimeToBuy = 0.0; //Has a max of 50 (unless huge beta)
         
-        if((currPrice >= histHigh) && (beta > 1)){
+        if((currPrice >= histHigh) && (beta < 1)){
             goodTimeToBuy = 0.0;
         }else if((currPrice > histHigh) && (beta > 1)){
             goodTimeToBuy = (30.0)*beta; //Dont want to buy in last minute as the stock rises
@@ -35,7 +35,7 @@ public class Calculation
         }else{
             goodTimeToBuy = 25;}
         
-        stockSmartScore1 = (25*(voltatility*1)) + goodTimeToBuy + (12.5*returnRiskRatio);
+        stockSmartScore1 = (25*(voltatility*1.2)) + goodTimeToBuy + (12.5*returnRiskRatio);
     }
     
     public static double getScore1(){
