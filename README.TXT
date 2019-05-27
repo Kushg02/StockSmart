@@ -13,5 +13,5 @@ USER INSTRUCTIONS:
 
 Files For Input:
     - Amazon Stock History
-    - NVIDIA Stock History
-    - S&P 500 Index History
+    - Tesla Stock History
+    - Index History
