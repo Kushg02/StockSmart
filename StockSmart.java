@@ -1,8 +1,7 @@
 
 /**
- * Main Runner
- *
- * @Kush (your name)
+ * Main File
+ * @Kush Garg (kushgarg.com/stocksmart)
  * @BUILD 1.6 (a version number or a date)
  */
 import java.io.*;
@@ -13,7 +12,7 @@ public class StockSmart //Main Program
     
     //WARNING 1: Files must be in dd/mm/yy format and CSV sheets can only have 2 columns
     //WARNING 2: Stock History Files must be the same in formatting/time period span
-    //DISCLAIMER: Used in conjunction with reasearch, not an independent analyzer
+    //DISCLAIMER: Program to be used in conjunction with reasearch, not an independent analyzer
     
     private double StockSmartScore1;
     private double StockSmartScore2;
