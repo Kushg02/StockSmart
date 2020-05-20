@@ -8,7 +8,7 @@ PROJECT TITLE: StockSmart
 PURPOSE OF PROJECT: Stock Analysis
 VERSION or DATE: 1.5v
 HOW TO START THIS PROJECT: Run 'void main' in class StockSmart
-AUTHORS: Kush Garg & Lucy Lu
+AUTHORS: Kush Garg
 USER INSTRUCTIONS:
 
 Files For Input:
